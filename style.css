@@ -1,0 +1,435 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1fr;
+    grid-template-rows: 0.1fr 1fr 1fr 1fr 0.1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". Title Title ."
+      "Wrapper Wrapper Wrapper Menu"
+      "Wrapper Wrapper Wrapper Menu"
+      "Wrapper Wrapper Wrapper Menu"
+      "Kont . . Name";
+  }
+  .Title { grid-area: Title; }
+  .Wrapper { grid-area: Wrapper; }
+  .Menu { grid-area: Menu; }
+  .Kont { grid-area: Kont; }
+  .Name { grid-area: Name; }
+
+.Title
+{
+    display: block;
+    margin-top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -20px;
+}
+
+.Wrapper form{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.Wrapper form .item {
+    flex: 1 1 25%;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px 10px 0 10px;
+    background-color: rgba(246,247,248);
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.Wrapper form .item .photo
+{
+    width: 200px;
+    height: 150px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.item   
+{
+    display: grid;
+    grid-template-columns: 60% 40% ;
+    grid-template-rows: 70% 30%;
+}
+
+.item .kal 
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 2;
+    border-top: 1px solid grey;
+}
+
+.item:hover{
+    box-shadow: 5px 5px 5px grey;
+}
+
+
+.item p 
+{
+    font-size: 25px;
+}
+
+
+.Menu
+{
+    margin-top:10px;
+    height: 787px;
+    border-radius: 5px;
+    padding: 10px 10px 0 10px;
+    background-color: rgba(246,247,248);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+}
+
+.Menu img
+{
+ display: block;
+ width: 100%;
+ height: 20%;
+ margin-bottom: 50px;
+}
+
+.Menu .button{
+    font-size: 25px;
+    text-align: center;
+    padding: 20px;
+    margin:5px;
+    background-color: #D7D7D7;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.button:hover{
+    box-shadow: 5px 5px 5px grey;
+}
+
+.Kont
+{
+    margin-top: -20px;
+    display: flex;
+    align-items: center;
+}
+
+.Kont p 
+{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.link
+{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.Name{
+    display: flex;
+    justify-content: flex-end;
+    margin-top:-20px;
+}
+
+.Name p{
+    font-size: 20px;
+}
+
+input
+{
+    display: none;
+}
+
+#pyrigID:checked ~ .tort,
+#pyrigID:checked ~ .rulet,
+#pyrigID:checked ~ .syrnyk,
+#pyrigID:checked ~ .tistechko
+{
+    opacity: 0.2;
+}
+
+#tortID:checked ~ .pyrig,
+#tortID:checked ~ .rulet,
+#tortID:checked ~ .syrnyk,
+#tortID:checked ~ .tistechko
+{
+    opacity: 0.2;
+}
+
+#ruletID:checked ~ .pyrig,
+#ruletID:checked ~ .tort,
+#ruletID:checked ~ .syrnyk,
+#ruletID:checked ~ .tistechko
+{
+    opacity: 0.2;
+}
+
+#syrnykID:checked ~ .pyrig,
+#syrnykID:checked ~ .tort,
+#syrnykID:checked ~ .rulet,
+#syrnykID:checked ~ .tistechko
+{
+    opacity: 0.2;
+}
+
+form #tistechkoID:checked ~ .pyrig,
+form #tistechkoID:checked ~ .tort,
+form #tistechkoID:checked ~ .rulet,
+form #tistechkoID:checked ~ .syrnyk
+{
+    opacity: 0.2;
+}
+
+form #skipID:checked ~ .pyrig,
+form #skipID:checked ~ .tort,
+form #skipID:checked ~ .rulet,
+form #skipID:checked ~ .tistechko,
+form #skipID:checked ~ .syrnyk
+{
+    opacity: 1;
+}
+
+
+
+@media (max-width: 1200px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 250px 1fr 10px;
+        gap: 0px 0px;
+        grid-template-areas:
+          "Title Title"
+          "Menu Menu"
+          "Wrapper Wrapper"
+          "Kont Name";
+      }
+      .Title { grid-area: Title; }
+      .Menu { grid-area: Menu; }
+      .Wrapper { grid-area: Wrapper; }
+      .Kont { grid-area: Kont; }
+      .Name { grid-area: Name; }
+
+    .Title{
+        display: block;
+        margin-left: auto;
+        margin-right: auto }
+
+    .Menu img{
+        display: none;
+    }
+
+    .Menu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items:center;
+    height: 150px;
+    background-color: white;
+    border:0px
+    }
+
+    .Menu .button{
+        font-size: 25px;
+        height: 20px;
+        width: 190px;
+
+    }
+
+    .Wrapper form{
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: -50px;
+        margin-bottom: 20px;
+    }
+    
+    .Wrapper form .item {
+        flex: 1 1 25%;
+        border-radius: 5px;
+        padding: 10px 10px 0 10px;
+        background-color: rgba(246,247,248);
+        border: 1px solid grey;
+        cursor: pointer;
+    }
+    
+    .Wrapper form .item .photo
+    {
+        width: 250px;
+        height: 150px;
+        margin-left: -3px;
+    }
+    
+    .item   
+    {
+        display: grid;
+        grid-template-rows: 80% 20%;
+    }
+    .item p
+    {
+        margin-top: 0px;
+        font-size: 20px;
+        grid-row: 2;
+    }
+    
+    .item .kal 
+    {
+        display: none;
+    }
+    
+    .Kont
+    {
+        width: 70px;
+        margin-top: -20px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    
+    .Kont p 
+    {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    
+    .link
+    {
+        margin-top: -15px;
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .Name{
+        display: flex;
+        justify-content: flex-end;
+        margin-top:-30px;
+    }
+    
+    .Name p{
+        font-size: 15px;
+    }
+    
+
+}
+
+@media (max-width: 730px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 300px 1fr 50px 10px;
+        gap: 0px 0px;
+        grid-template-areas:
+          "Title"
+          "Menu"
+          "Wrapper"
+          "Kont"
+          "Name";
+      }
+      .Title { grid-area: Title; }
+      .Menu { grid-area: Menu; }
+      .Wrapper { grid-area: Wrapper; }
+      .Name { grid-area: Name; }
+      .Kont { grid-area: Kont; }
+
+    .Title{
+        display: block;
+        margin-left: auto;
+        margin-right: auto }
+
+    .Menu img{
+        display: none;
+    }
+
+    .Menu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items:center;
+    height: 150px;
+    background-color: white;
+    border:0px
+    }
+
+    .Menu .button{
+        font-size: 20px;
+        height: 20px;
+        width: 150px;
+
+    }
+
+    .Wrapper form{
+        display: flex;
+        flex-direction: column;
+        margin-top: -50px;
+        margin-bottom: 20px;
+        
+    }
+    
+    .Wrapper form .item {
+        flex: 1 1 25%;
+        width: 87%;
+        height: 280px;
+        border-radius: 5px;
+        padding: 10px 10px 0 10px;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .Wrapper form .item .photo
+    {
+        width: 350px;
+        height: 250px;
+    }
+    
+    .item p
+    {
+        display: none;
+    }
+    
+    .item .kal 
+    {
+        display: none;
+    }
+    
+    .Kont
+    {
+        width: 70px;
+        margin-top: -20px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    
+    .Kont p 
+    {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    
+    .link
+    {
+        margin-top: -15px;
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .Name{
+        display: flex;
+        justify-content: flex-start;
+        margin-top:-30px;
+    }
+    
+    .Name p{
+        font-size: 15px;
+    }
+
+}
